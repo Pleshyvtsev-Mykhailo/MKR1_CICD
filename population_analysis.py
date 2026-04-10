@@ -1,5 +1,6 @@
 import os
 
+
 def read_population_data(file_path):
 
     data = []

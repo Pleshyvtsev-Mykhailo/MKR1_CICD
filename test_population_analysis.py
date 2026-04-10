@@ -3,6 +3,7 @@ import tempfile
 import os
 from population_analysis import read_population_data, calculate_population_change
 
+
 @pytest.fixture
 def sample_data_file():
     content = "Ukraine, 2020, 41000000\nUkraine, 2021, 40000000\nJapan, 2020, 125000000\nJapan, 2021, 124000000\n"
@@ -30,8 +31,6 @@ def test_read_population_data(sample_data_file):
         {'country': 'Japan', 'year': 2022, 'population': 123000000}
     ], 'Japan', 2022, -2000000)
 ])
-
-
 def test_calculate_population_change(test_input, expected_country, expected_year, expected_change):
     result = calculate_population_change(test_input)
     assert expected_country in result
